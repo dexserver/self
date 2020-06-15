@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<html lang="en">
- <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noimageindex, noarchive">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 <style>
+
+.box{
+        color: #ff;
+        padding: 0px;
+        display: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .33000{ background: #fff; }
+    .49000{ background: #fff; }
+    .blue{ background: #fff; }
+
+
+
+.button {
+    display: block;
+    width: 300px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration:none;
+    font-size: 20px;
+}
+
 .btn {-webkit-tap-highlight-color: rgba(0,0,0,0);
 --swiper-theme-color: #007aff;
 --swiper-navigation-size: 44px;
@@ -63,10 +87,36 @@ vertical-align: baseline;
 border: 0;
 outline: 0;
 display: inline-block;
-padding: 30px 10px 30px 0;
+padding: 10px 10px 10px 0;
 width: 100%;
 margin: 0 auto;
-padding-top: 10px;
+padding-top: 0px;
+padding-bottom: 0;
+}
+
+.option_list {user-select: none;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+--swiper-theme-color: #007aff;
+--swiper-navigation-size: 44px;
+overflow-wrap: normal;
+word-break: keep-all;
+white-space: normal;
+text-size-adjust: none;
+font-family: NotoSansKR, ����, Dotum, ����, Gulim, Tahoma, Verdana, Geneva, sans-serif !important;
+font-weight: 400;
+line-height: 1.42857143;
+color: #353535;
+text-align: left;
+font-size: 0.95em;
+box-sizing: border-box;
+vertical-align: baseline;
+border: 0;
+outline: 0;
+display: inline-block;
+padding: 10px 10px 10px 0;
+width: 100%;
+margin: 0 auto;
+padding-top: 0px;
 padding-bottom: 0;
 }
 
@@ -86,13 +136,31 @@ font-family: inherit;
 font-size: 100%;
 margin: 0;
 text-transform: none;
+margin-bottom: 10px;
+select
+}
+
+
+#Join_op {user-select: none;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+--swiper-theme-color: #007aff;
+--swiper-navigation-size: 44px;
+overflow-wrap: normal;
+word-break: keep-all;
+text-size-adjust: none;
+padding: 0;
+box-sizing: border-box;
+font: inherit;
+color: inherit;
+line-height: inherit;
+font-family: inherit;
+font-size: 100%;
+margin: 0;
+text-transform: none;
 margin-top: 10px;
 margin-left: 5px;
 select
-
 }
-
-<body>
 
 
 body {
@@ -133,10 +201,13 @@ body {
   border-radius: 50%;
 }
 </style>
+
+
+
 </head>
 <body>
-
-<div class="split left">
+<div class="col-md-6">
+<div class="split left"  d-flex justify-content-between align-items-center>
   <div class="centered">
     <img src="img_avatar2.png" alt="Avatar woman">
     <h2>Jane Flex</h2>
@@ -144,6 +215,7 @@ body {
   </div>
 </div>
 
+<div class="col-md-6">
 <div class="split right">
   <div class="left">
 
@@ -158,76 +230,90 @@ body {
 </div>
 </div>
 </div>
+
+
+
+
+<p>지원금
+<label><input type="radio" value="123">123</label>
+<label><input type="radio" value="456">456</label>
+</p>
+
 <div class="seller">
+
 <div class="option_list">
-
-
 <p>가입 유형
-<label><input type="radio" name="join_type" id="join_type" value="번호이동">번호이동</label>
-<label><input type="radio" name="join_type" id="join_type" value="신규가입">신규가입</label>
+<select id="Join_op" onchange="table()">
+<option value="가입유형 선택">  번호이동 & 신규가입  </option>
+<option value="번호이동">번호이동</option>
+<option value="신규가입">신규가입</option>
+</select>
 </p>
 </div>
-<div class="option_list">
 
-<p>지원금 유형
-<label><input type="radio" checked="checked" name="subsidy_type" value="단말기할인">단말기할인</label>
+<div class="option_list">
+<p>약정기간
+<label><input type="radio" checked="checked" name="subsidy_type" value="단말기할인">12개월</label>
+<input type="radio" checked="checked" name="subsidy_type" value="단말기할인">24개월</label>
 </p>
 </div>
-<div class="option_list">
 
-<p>유심비 유형
-<label><input type="radio" checked="checked" name="usim_type" value="후납">후납<span style="font-size: 15px;">(익월 요금에 합산청구)</span></label>
+<div class="option_list">
+<p>유심비 청구
+<label><input type="radio" checked="checked" name="usim_type" value="후납">후불<span style="font-size: 15px;"> (익월 요금에 청구)</span></label>
 </p>
 </div>
-<div class="option_list">
 
+<div class="option_list">
 <p>가입비 유형
 <label><input type="radio" checked="checked" name="charge_type" value="무료">무료</label>
 </p>
 </div>
+
+
 <div class="option_list">
-<p>
+<p>요금제 선택
+<select id="payment_type" onchange="table()">
 
-<style>
-.box{
-        color: #ff;
-        padding: 20px;
-        display: none;
-        margin-top: 20px;
-    }
-    .33000{ background: #fff; }
-    .49000{ background: #fff; }
-    .blue{ background: #fff; }
+<option value="">선택하기</option>
+
+<option value="33000">LTE베이직 (33,000)</option>
+
+<option value="49000">데이터ON 톡 (49,000)</option>
+
+<option value="69000">데이터ON 비디오 (69,000)</option>
+
+</select>
+</p>
+</div>
+<div class="33000 box">데이터 : 1.4GB<br>
+통화 : 기본제공
+(영상, 부가 50분)<br>
+문자 : 기본제공</div>
+
+<div class="49000 box">데이터 : 무한 (3GB + 최대 1Mbpm 속도제어)<br>
+통화 : 기본제공
+(영상, 부가 300분)<br>
+문자 : 기본제공</div>
+<div class="69000 box">데이터 : 무한 (100GB+최대 5Mbpm 속도제어)<br>
+통화 : 기본제공
+(영상, 부가 300분)<br>
+문자 : 기본제공</div>
 
 
-
-.button {
-    display: block;
-    width: 115px;
-    height: 25px;
-    background: #4E9CAF;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    line-height: 25px;
-    text-decoration:none;
-}
-</style>
 <html>
 <head>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-$('#payment_type').change(function(e) {
+$('#Join_op').change(function(e) {
     var an = $(this).val();
-    switch(an){         
-
-case "33000": $('.button-plans a').attr('href',"google.com"); break;
-case "49000": $('.button-plans a').attr('href',"google.com"); break;
-case "69000": $('.button-plans a').attr('href',"yahoo.com"); break;
-case "tri": $('.button-plans a').attr('href',"bing.com"); break;
+    switch(an){ 
+    
+case "가입유형 선택": $('.button-plans a').attr('href',"yahoo.com"); break;
+case "번호이동": $('.button-plans a').attr('href',"google.com"); break;
+case "신규가입": $('.button-plans a').attr('href',"naver.com"); break;
             /* and so on*/
         }
 });
@@ -240,32 +326,7 @@ case "tri": $('.button-plans a').attr('href',"bing.com"); break;
 </head>
 
 
-요금제 선택
-<select id="payment_type" onchange="table()">
 
-<option value="">선택하기</option>
-
-<option value="33000">LTE베이직 (33,000)</option>
-
-<option value="49000">데이터ON 톡 (49,000)</option>
-
-<option value="69000">데이터ON 비디오 (69,000)</option>
-
-</select>
-
-<div class="33000 box">데이터 : 1.4GB<br>
-통화 : 집전화, 이동전화 무제한
-(영상, 부가 50분)<br>
-문자 : 기본제공</div>
-
-<div class="49000 box">데이터 : 무한 (3GB + 최대 1Mbpm 속도제어)<br>
-통화 : 집전화, 이동전화 무제한
-(영상, 부가 300분)<br>
-문자 : 기본제공</div>
-<div class="69000 box">데이터 : 무한 (100GB+최대 5Mbpm 속도제어)<br>
-통화 : 집전화, 이동전화 무제한
-(영상, 부가 300분)<br>
-문자 : 기본제공</div>
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -318,4 +379,6 @@ $(document).ready(function(){
 
      
 </body>
-</html> 
+</html>
+
+
