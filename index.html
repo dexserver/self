@@ -6,6 +6,34 @@
 
 <style>
 
+.split {
+  height:100vh;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.split left, .split right { 
+
+} 
+
+@media screen and (min-width: 768px) { 
+.split left, .split right { 
+height:100vh;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+} 
+}
+
+
 .box{
         color: #ff;
         padding: 0px;
@@ -168,15 +196,7 @@ body {
   color: black;
 }
 
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+
 
 .left {
   left: 0;
@@ -206,8 +226,7 @@ body {
 
 </head>
 <body>
-<div class="col-md-6">
-<div class="split left"  d-flex justify-content-between align-items-center>
+<div class="split left">
   <div class="centered">
     <img src="img_avatar2.png" alt="Avatar woman">
     <h2>Jane Flex</h2>
